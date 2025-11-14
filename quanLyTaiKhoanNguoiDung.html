@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quản Lý Tài Khoản Người Dùng</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      display: flex;
+    }
+    .sidebar {
+      width: 220px;
+      background: #fff;
+      height: 100vh;
+      padding: 20px;
+      box-shadow: 2px 0 8px rgba(0,0,0,0.05);
+    }
+    .sidebar .admin {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    .sidebar .admin img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    .sidebar a {
+      display: block;
+      padding: 10px 0;
+      color: #333;
+      text-decoration: none;
+      margin: 5px 0;
+    }
+    .sidebar a.active {
+      background: #e9f6ff;
+      border-radius: 8px;
+      padding-left: 10px;
+      font-weight: bold;
+    }
+    .main {
+      flex: 1;
+      padding: 30px;
+    }
+    .header {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background: #007bff;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    .table-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+      font-size: 14px;
+    }
+    .role-admin { color: red; font-weight: bold; }
+    .role-user { color: #007bff; font-weight: bold; }
+    .status-active { color: green; font-weight: bold; }
+    .status-locked { color: gray; font-weight: bold; }
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .pagination button {
+      padding: 8px 12px;
+      margin: 0 4px;
+      border: 1px solid #ccc;
+      background: #fff;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .pagination .active {
+      background: #007bff;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="admin">
+      <img src="./img/hinhcho.jpg" />
+      <div>
+        <div>Admin</div>
+        <small>admin@tourism.com</small>
+      </div>
+    </div>
+
+    <a href="#">Dashboard</a>
+    <a href="#">Địa điểm</a>
+    <a href="#">Ẩm Thực</a>
+    <a href="#">Tour</a>
+    <a href="#">Thanh Toán & Vé</a>
+    <a class="active" href="#">Người Dùng</a>
+
+    <a href="#" style="margin-top:40px;color:red;">Đăng xuất</a>
+  </div>
+
+  <div class="main">
+    <div class="header">Quản Lý Tài Khoản Người Dùng</div>
+
+    <div class="actions">
+      <a class="btn" href="#">+ Thêm Người Dùng Mới</a>
+    </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Tên Người Dùng</th>
+            <th>Email</th>
+            <th>Vai Trò</th>
+            <th>Trạng Thái</th>
+            <th>Ngày Tạo</th>
+            <th>Hành Động</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" checked></td>
+            <td>Lê Minh Tuấn</td>
+            <td>minhtuan.le@email.com</td>
+            <td class="role-admin">Admin</td>
+            <td class="status-active">Hoạt động</td>
+            <td>2023-01-15</td>
+            <td><a href="#">edit</a> | <a href="#">delete</a> | <a href="#">lock</a></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" checked></td>
+            <td>Nguyễn Thị Mai</td>
+            <td>mai.nguyen@email.com</td>
+            <td class="role-user">User</td>
+            <td class="status-active">Hoạt động</td>
+            <td>2023-03-22</td>
+            <td><a href="#">edit</a> | <a href="#">delete</a> | <a href="#">lock</a></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" checked></td>
+            <td>Trần Văn Hùng</td>
+            <td>hung.tran@email.com</td>
+            <td class="role-user">User</td>
+            <td class="status-locked">Bị khóa</td>
+            <td>2023-05-10</td>
+            <td><a href="#">edit</a> | <a href="#">delete</a> | <a href="#">lock</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="pagination">
+        <button>1</button>
+        <button class="active">2</button>
+        <button>3</button>
+        <button>...</button>
+        <button>10</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

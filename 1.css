@@ -1,0 +1,91 @@
+header{
+    background-color: red;
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+}
+header a img{
+    width: 120px;
+    margin-top: 5px;
+}
+header nav a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 15px 10px;
+}
+nav a:hover{
+    background-color: rgb(4, 30, 23);
+}
+.container{
+    width: 800px;
+    height: auto;
+}
+.title{
+    border-bottom: 2px solid black;
+    position: relative;
+    padding-top: 20px;
+}
+.title span{
+    text-transform: uppercase;
+    font-size: 22px;
+    position: absolute;
+    top: 0px;
+    background-color: white;
+    padding-right: 5px;
+}
+.tinchinh{
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 20px;
+
+}
+.tinchinh a{
+    width: 50%;
+    display: inline-block;
+}
+.tinchinh a img{
+    width: 100%;
+
+}
+.tinchinh .noidung{
+    width: 50%;
+    text-align: right;
+}
+.tinchinh .noidung a{
+    text-decoration: none;
+    display: inline;
+}
+.tinchinh .noidung a h2{
+    color: black;
+    font-size:  20px;
+    margin-top: 0;
+}
+.tinchinh .noidung a h2:hover{
+    color: brown;
+}
+.tinlienquan{
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+.tinlienquan a.khoi{
+    display: inline-block;
+    width: 266px;
+    text-decoration: none;
+}
+.tinlienquan img{
+    width: 100%;
+}
+.tinlienquan h3{
+    color: black;
+    margin-top: 3px;
+}
+.tinlienquan h3:hover{
+    color: brown;
+}
