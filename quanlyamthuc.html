@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quản lý Ẩm thực Đà Nẵng</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="admin-info">
+        <img
+          class="avatar"
+          src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+          alt="Admin"
+        />
+        <div class="admin-text">
+          <p class="admin-name">Admin</p>
+          <p class="admin-email">admin@tourism.com</p>
+        </div>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a href="#" class="menu-item">Dashboard</a>
+        <a href="#" class="menu-item">Địa điểm</a>
+        <a href="#" class="menu-item active">Ẩm Thực</a>
+        <a href="#" class="menu-item">Tour</a>
+        <a href="#" class="menu-item">Thanh Toán & Vé</a>
+        <a href="#" class="menu-item">Người Dùng</a>
+      </nav>
+
+      <div class="logout">
+        <a href="#">Đăng xuất</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <h1>Quản lý Ẩm thực Đà Nẵng</h1>
+
+      <section class="search-add">
+        <div class="search-container">
+          <input type="text" placeholder="Tìm kiếm theo tên..." />
+          <button class="btn-add"><strong>Thêm Mới</strong></button>
+        </div>
+
+        <div class="filters">
+          <div class="dropdown">
+            <button class="filter-btn">Trạng thái: Tất cả ▼</button>
+            <ul class="dropdown-menu">
+              <li><a href="#" data-value="all">Tất cả</a></li>
+              <li><a href="#" data-value="active">Đang hoạt động</a></li>
+              <li><a href="#" data-value="inactive">Tạm ẩn</a></li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button class="filter-btn">Loại: Tất cả ▼</button>
+            <ul class="dropdown-menu">
+              <li><a href="#" data-value="all">Tất cả</a></li>
+              <li><a href="#" data-value="mien-trung">Miền Trung</a></li>
+              <li><a href="#" data-value="mien-nam">Miền Nam</a></li>
+              <li><a href="#" data-value="mien-bac">Miền Bắc</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <table class="food-table">
+        <thead>
+          <tr>
+            <th>Hình ảnh</th>
+            <th>Tên Món ăn/Địa điểm</th>
+            <th>Mô tả</th>
+            <th>Trạng thái</th>
+            <th>Hành động</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <img
+                class="food-img"
+                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=80&q=80"
+                alt="Mì Quảng Bà Mua"
+              />
+            </td>
+            <td>Mì Quảng Bà Mua</td>
+            <td>Đặc sản mì quảng nổi tiếng nhất Đà Nẵng.</td>
+            <td><span class="status status-active">Đang hoạt động</span></td>
+            <td>
+              <a href="#" class="edit">edit</a>
+              <a href="#" class="delete">delete</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                class="food-img"
+                src="https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=80&q=80"
+                alt="Bánh xèo Bà Dưỡng"
+              />
+            </td>
+            <td>Bánh xèo Bà Dưỡng</td>
+            <td>Quán bánh xèo lâu đời, vỏ giòn, nhân đầy đặn.</td>
+            <td><span class="status status-active">Đang hoạt động</span></td>
+            <td>
+              <a href="#" class="edit">edit</a>
+              <a href="#" class="delete">delete</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                class="food-img"
+                src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=80&q=80"
+                alt="Hải sản Bé Mặn"
+              />
+            </td>
+            <td>Hải sản Bé Mặn</td>
+            <td>Nhà hàng hải sản tươi sống, giá cả phải chăng.</td>
+            <td><span class="status status-inactive">Tạm ẩn</span></td>
+            <td>
+              <a href="#" class="edit">edit</a>
+              <a href="#" class="delete">delete</a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img
+                class="food-img"
+                src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=80&q=80"
+                alt="Bánh tráng cuốn thịt heo"
+              />
+            </td>
+            <td>Bánh tráng cuốn thịt heo</td>
+            <td>Món ăn dân dã nhưng đậm đà hương vị miền Trung.</td>
+            <td><span class="status status-active">Đang hoạt động</span></td>
+            <td>
+              <a href="#" class="edit">edit</a>
+              <a href="#" class="delete">delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="pagination">
+        <button class="paginate-btn" disabled>‹</button>
+        <button class="paginate-btn active">1</button>
+        <button class="paginate-btn">2</button>
+        <span>...</span>
+        <button class="paginate-btn">›</button>
+      </div>
+
+      <p class="showing-info">
+        Showing <strong>1–4</strong> of <strong>100</strong>
+      </p>
+    </main>
+
+    <script>
+      document.querySelectorAll(".dropdown").forEach((dropdown) => {
+        const btn = dropdown.querySelector(".filter-btn");
+        const menu = dropdown.querySelector(".dropdown-menu");
+
+        btn.addEventListener("click", () => {
+          menu.classList.toggle("show");
+        });
+
+        menu.querySelectorAll("a").forEach((item) => {
+          item.addEventListener("click", (e) => {
+            e.preventDefault();
+            btn.textContent =
+              btn.textContent.split(":")[0] + ": " + item.textContent + " ▼";
+            menu.classList.remove("show");
+          });
+        });
+      });
+
+      window.addEventListener("click", (e) => {
+        document.querySelectorAll(".dropdown-menu.show").forEach((menu) => {
+          if (!menu.parentElement.contains(e.target)) {
+            menu.classList.remove("show");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
