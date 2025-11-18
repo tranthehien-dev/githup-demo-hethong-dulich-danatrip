@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quản Lý Tour Du Lịch</title>
+    <link rel="stylesheet" href="styless.css" />
+  </head>
+  <body>
+    <div class="container">
+      <aside class="sidebar">
+        <div class="profile">
+          <div class="avatar">A</div>
+          <div class="info">
+            <div class="name">Admin</div>
+            <div class="email">admin@tourism.com</div>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <button><span class="icon-dashboard"></span>Dashboard</button>
+          <button><span class="icon-location"></span>Địa điểm</button>
+          <button><span class="icon-food"></span>Ẩm Thực</button>
+          <button class="active"><span class="icon-tour"></span>Tour</button>
+          <button><span class="icon-payment"></span>Thanh Toán & Vé</button>
+          <button><span class="icon-user"></span>Người Dùng</button>
+        </nav>
+        <div class="logout">
+          <button><span class="icon-logout"></span>Đăng xuất</button>
+        </div>
+      </aside>
+
+      <main class="main">
+        <h1>Quản Lý Tour Du Lịch</h1>
+
+        <div class="controls">
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Tìm kiếm tour..."
+          />
+          <select id="filterStatus" aria-label="Trạng thái">
+            <option value="">Trạng thái</option>
+            <option value="Hoạt động">Hoạt động</option>
+            <option value="Đã Ẩn">Đã Ẩn</option>
+          </select>
+          <select id="filterType" aria-label="Loại tour">
+            <option value="">Loại tour</option>
+            <option value="1 ngày">1 ngày</option>
+            <option value="Nửa ngày">Nửa ngày</option>
+            <option value="2 ngày 1 đêm">2 ngày 1 đêm</option>
+          </select>
+          <select id="filterDuration" aria-label="Thời lượng">
+            <option value="">Thời lượng</option>
+            <option value="1 ngày">1 ngày</option>
+            <option value="Nửa ngày">Nửa ngày</option>
+            <option value="2 ngày 1 đêm">2 ngày 1 đêm</option>
+          </select>
+
+          <button id="btnAddTour" class="btn-add">+ Thêm Tour Mới</button>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Tên Tour</th>
+              <th>Mô tả</th>
+              <th>Giá</th>
+              <th>Thời lượng</th>
+              <th>Trạng thái</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Dữ liệu tour sẽ hiển thị ở đây -->
+          </tbody>
+        </table>
+
+        <div class="pagination" id="pagination">
+          <span id="infoCount">Hiển thị 1-4 của 4</span>
+          <button id="prevPage" disabled>&lt;</button>
+          <button id="nextPage" disabled>&gt;</button>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal thêm/sửa Tour -->
+    <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+      >
+        <h2 id="modalTitle">Thêm Tour Mới</h2>
+        <form id="tourForm">
+          <div class="form-group">
+            <label for="tourName">Tên Tour</label>
+            <input type="text" id="tourName" name="tourName" required />
+          </div>
+          <div class="form-group">
+            <label for="tourDesc">Mô tả</label>
+            <input type="text" id="tourDesc" name="tourDesc" required />
+          </div>
+          <div class="form-group">
+            <label for="tourPrice">Giá (đ)</label>
+            <input
+              type="number"
+              id="tourPrice"
+              name="tourPrice"
+              min="0"
+              step="1000"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="tourDuration">Thời lượng</label>
+            <select id="tourDuration" name="tourDuration" required>
+              <option value="">Chọn thời lượng</option>
+              <option value="Nửa ngày">Nửa ngày</option>
+              <option value="1 ngày">1 ngày</option>
+              <option value="2 ngày 1 đêm">2 ngày 1 đêm</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="tourStatus">Trạng thái</label>
+            <select id="tourStatus" name="tourStatus" required>
+              <option value="">Chọn trạng thái</option>
+              <option value="Hoạt động">Hoạt động</option>
+              <option value="Đã Ẩn">Đã Ẩn</option>
+            </select>
+          </div>
+
+          <div class="modal-actions">
+            <button type="button" class="btn-cancel" id="btnCancel">Hủy</button>
+            <button type="submit" class="btn-save">Lưu</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="scriptt.js"></script>
+  </body>
+</html>
