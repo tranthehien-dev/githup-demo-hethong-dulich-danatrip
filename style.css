@@ -1,0 +1,358 @@
+/* Reset cơ bản */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body, html {
+    height: 100%;
+    background-color: #f4f9f9;
+    color: #333;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+button {
+    cursor: pointer;
+}
+h1, h2 {
+    margin-bottom: 0.5rem;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 220px;
+    height: 100%;
+    background-color: #e3f6fd;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+.avatar {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.email {
+    font-size: 0.9rem;
+    color: #70aeb4;
+}
+.nav-menu .menu-item {
+    display: block;
+    padding: 0.7rem 1rem;
+    margin-bottom: 0.7rem;
+    border-radius: 0.6rem;
+    color: #355555;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+.nav-menu .menu-item:hover,
+.nav-menu .menu-item.active {
+    background-color: #bdefef;
+    color: #056674;
+}
+
+.logout {
+    font-size: 0.9rem;
+    color: #333;
+}
+.logout a {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 230px;
+    padding: 2rem;
+}
+.instruction {
+    color: #70aeb4;
+    margin-bottom: 1rem;
+}
+.top-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+#searchInput {
+    flex-grow: 1;
+    padding: 0.6rem;
+    border-radius: 8px;
+    border: 1px solid #c7dbe1;
+    font-size: 1rem;
+}
+#filterBtn {
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #c7dbe1;
+    background-color: white;
+    font-weight: 600;
+    color: #333;
+}
+.btn-primary {
+    background-color: #00cfff;
+    border: none;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: #00a9cc;
+}
+.location-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.03);
+}
+.location-table th, .location-table td {
+    padding: 0.8rem 1.2rem;
+    border-bottom: 1px solid #e9f3f5;
+    text-align: left;
+    max-width: 280px;
+    word-wrap: break-word;
+}
+.location-table th:first-child, .location-table td:first-child {
+    text-align: center;
+}
+.location-table tbody tr:hover {
+    background-color: #f0fdff;
+}
+
+.location-table tbody td:nth-child(2),
+.location-table tbody td:nth-child(3),
+.location-table tbody td:nth-child(4) {
+    color: #70aeb4;
+}
+.location-table tbody td:nth-child(3) {
+    font-style: italic;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.status {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-block;
+}
+.status.active {
+    background-color: #dff5e1;
+    color: #4caf50;
+}
+.status.hidden {
+    background-color: #eeeeee;
+    color: #9e9e9e;
+}
+.status.pending {
+    background-color: #fff1d6;
+    color: #ff9800;
+}
+
+.action-buttons {
+    font-size: 0.9rem;
+}
+.action-buttons span {
+    margin-left: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+.action-buttons .edit {
+    color: #155293;
+}
+.action-buttons .delete {
+    color: #f44336;
+}
+
+/* Pagination */
+.pagination {
+    margin-top: 1rem;
+    text-align: center;
+}
+.page-btn {
+    background-color: transparent;
+    border: none;
+    margin: 0 0.4rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #9ca6a8;
+    cursor: pointer;
+}
+.page-btn.active {
+    background-color: #00cfff;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+.page-btn:hover:not(.active) {
+    color: #00a9cc;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 44, 65, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.hidden {
+    display: none;
+}
+.modal-content {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 420px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+.modal-close {
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    color: darkgray;
+}
+.modal-close:hover {
+    color: #f44336;
+}
+
+#locationForm label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #577e8a;
+}
+#locationForm input[type="text"],
+#locationForm textarea,
+#locationForm select {
+    margin-top: 0.3rem;
+    width: 100%;
+    padding: 0.5rem 0.6rem;
+    border-radius: 8px;
+    border: 1px solid #acc7c9;
+    font-size: 1rem;
+    font-family: inherit;
+}
+#locationForm textarea {
+    resize: vertical;
+}
+
+.form-buttons {
+    margin-top: 1.5rem;
+    text-align: right;
+}
+.btn-secondary {
+    background-color: #caced1;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-left: 0.8rem;
+    color: #47585a;
+}
+.btn-secondary:hover {
+    background-color: #a5b0b3;
+}
+.btn-danger {
+    background-color: #f44336;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    color: white;
+    margin-right: 0.8rem;
+}
+.btn-danger:hover {
+    background-color: #cc382d;
+}
+.location-table tbody td:nth-child(3) {
+    font-style: italic;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+    cursor: pointer;
+    position: relative;
+}
+.location-table tbody td:nth-child(3):hover {
+    white-space: normal;
+    overflow: visible;
+    background-color: #f0fdff;
+    border-radius: 8px;
+    padding: 6px 10px;
+    box-shadow: 0 2px 10px rgba(0,195,255,0.15);
+    position: absolute;
+    z-index: 10;
+    width: max-content;
+    max-width: 400px;
+}
+.status.hidden {
+    background-color: #eeeeee;
+    color: #9e9e9e;
+    opacity: 0.7;
+}
+/* ... giữ nguyên toàn bộ CSS bạn đã có ... */
+
+.location-table tbody td:nth-child(3) {
+    font-style: italic;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 400px;
+    cursor: pointer;
+    position: relative;
+}
+.location-table tbody td:nth-child(3):hover {
+    white-space: normal;
+    overflow: visible;
+    background-color: #f0fdff;
+    border-radius: 8px;
+    padding: 6px 10px;
+    box-shadow: 0 2px 10px rgba(0,195,255,0.15);
+    position: absolute;
+    z-index: 10;
+    width: max-content;
+    max-width: 400px;
+}
+
+/* trạng thái tạm ẩn */
+.status.hidden {
+    background-color: #eeeeee;
+    color: #9e9e9e;
+    opacity: 0.7;
+}
