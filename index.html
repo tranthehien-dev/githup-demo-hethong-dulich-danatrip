@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông Tin Cá Nhân</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div class="user">
+            <img id="sidebarAvatar" src="https://i.imgur.com/0y8Ftya.png">
+            <h4 id="sidebarName">Nguyễn Văn A</h4>
+            <p id="sidebarEmail">nva@email.com</p>
+        </div>
+
+        <div class="menu">
+            <a class="active">Thông tin cá nhân</a>
+            <a>Lịch sử đặt tour</a>
+            <a>Cài đặt tài khoản</a>
+        </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <h2 class="title">Thông Tin Cá Nhân</h2>
+
+        <div class="card" id="info-form">
+
+            <div class="row">
+                <div class="input-group">
+                    <label>Họ và Tên</label>
+                    <input id="name" value="Nguyễn Văn A">
+                </div>
+
+                <div class="input-group">
+                    <label>Số điện thoại</label>
+                    <input id="phone" value="0905123456">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Email</label>
+                <input id="email" value="nva@email.com">
+            </div>
+
+            <div class="input-group">
+                <label>Địa chỉ</label>
+                <input id="address" placeholder="Nhập địa chỉ của bạn">
+            </div>
+
+            <div class="actions">
+                <button class="cancel-btn" onclick="cancelChanges()">Hủy</button>
+                <button class="save-btn" onclick="saveChanges()">Lưu thay đổi</button>
+            </div>
+        </div>
+
+        <h2 class="title">Lịch Sử Đặt Tour</h2>
+
+        <div class="tabs" id="tabs">
+            <span class="active" data-tab="upcoming">Sắp tới</span>
+            <span data-tab="done">Đã hoàn thành</span>
+            <span data-tab="canceled">Đã hủy</span>
+        </div>
+
+        <div id="tab-content" class="card empty-box">
+            <p><strong>Chưa có chuyến đi nào</strong></p>
+            <p>Bạn chưa đặt tour nào sắp tới.</p>
+            <button class="save-btn">Khám phá các tour</button>
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div id="modal" class="modal-bg" onclick="closeOnBg(event)">
+        <div class="modal">
+            <h3>Đã lưu thay đổi!</h3>
+            <p>Thông tin của bạn đã được cập nhật.</p>
+            <button onclick="closeModal()" class="save-btn">OK</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
