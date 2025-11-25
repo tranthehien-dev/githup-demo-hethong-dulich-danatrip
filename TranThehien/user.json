@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Lê Minh Tuấn",
+      "email": "minhtuan.le@email.com",
+      "role": "Admin",
+      "status": "Hoạt động",
+      "createdAt": "2023-01-15"
+    },
+    {
+      "id": "2",
+      "name": "Nguyễn Thị Mai",
+      "email": "mai.nguyen@email.com",
+      "role": "User",
+      "status": "Hoạt động",
+      "createdAt": "2023-03-22"
+    },
+    {
+      "id": "3",
+      "name": "Trần Văn Hùng",
+      "email": "hung.tran@email.com",
+      "role": "User",
+      "status": "Bị khóa",
+      "createdAt": "2023-05-10"
+    }
+  ]
+}
