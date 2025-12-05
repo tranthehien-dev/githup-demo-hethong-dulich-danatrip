@@ -1,0 +1,231 @@
+﻿/* Admin Contact – Quản lý Liên hệ */
+
+:root {
+    --ac-bg: #f5f7fb;
+    --ac-card-bg: #ffffff;
+    --ac-border: #e2e8f0;
+    --ac-text-main: #0b1f33;
+    --ac-text-muted: #6b7280;
+    --ac-primary: #00c3ff;
+    --ac-radius-lg: 18px;
+    --ac-shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+.ac-page {
+    padding: 24px 0 40px;
+}
+
+.ac-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--ac-text-main);
+}
+
+.ac-subtitle {
+    font-size: 13px;
+    color: var(--ac-text-muted);
+    margin-bottom: 16px;
+}
+
+/* FILTER BAR */
+
+.ac-filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ac-search {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--ac-border);
+    background: #f9fafb;
+    font-size: 14px;
+}
+
+    .ac-search:focus {
+        outline: none;
+        background: #ffffff;
+        border-color: var(--ac-primary);
+        box-shadow: 0 0 0 1px rgba(0, 195, 255, 0.25);
+    }
+
+.ac-btn {
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+}
+
+.ac-btn-filter {
+    background: var(--ac-primary);
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(0, 195, 255, 0.30);
+}
+
+/* TABS */
+
+.ac-tabs {
+    display: inline-flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    background: #edf2ff;
+    padding: 4px;
+    border-radius: 999px;
+}
+
+.ac-tab {
+    border: none;
+    background: transparent;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #4b5563;
+}
+
+    .ac-tab:hover {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+/* MESSAGE */
+
+.ac-msg {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: var(--ac-text-muted);
+}
+
+    .ac-msg.success {
+        color: #16a34a;
+    }
+
+    .ac-msg.info {
+        color: #0284c7;
+    }
+
+/* TABLE */
+
+.ac-table {
+    background: var(--ac-card-bg);
+    border-radius: var(--ac-radius-lg);
+    box-shadow: var(--ac-shadow-soft);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.ac-row {
+    display: grid;
+    grid-template-columns: 140px 160px 200px 150px 1.4fr 130px 140px;
+    column-gap: 8px;
+    padding: 10px 16px;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(243, 244, 246, 0.9);
+    font-size: 13px;
+}
+
+    .ac-row:last-child {
+        border-bottom: none;
+    }
+
+.ac-row-header {
+    background: #f8fafc;
+    font-weight: 600;
+    color: var(--ac-text-muted);
+    font-size: 13px;
+}
+
+.ac-col {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ac-col-content {
+    white-space: normal;
+}
+
+.ac-col-actions {
+    text-align: right;
+}
+
+.ac-subtext {
+    font-size: 11px;
+    color: var(--ac-text-muted);
+}
+
+/* STATUS BADGE */
+
+.ac-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+    .ac-status::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        margin-right: 6px;
+    }
+
+.ac-status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+    .ac-status-pending::before {
+        background: #fbbf24;
+    }
+
+.ac-status-done {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+    .ac-status-done::before {
+        background: #22c55e;
+    }
+
+.ac-status-default {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+    .ac-status-default::before {
+        background: #9ca3af;
+    }
+
+/* ACTION LINKS */
+
+.ac-link {
+    display: block;
+    font-size: 11px;
+    color: #0ea5e9;
+    cursor: pointer;
+}
+
+.ac-link-muted {
+    color: #6b7280;
+}
+
+.ac-link:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+
+.ac-footer {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--ac-text-muted);
+}

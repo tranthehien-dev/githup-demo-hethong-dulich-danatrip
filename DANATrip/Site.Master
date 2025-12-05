@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="DANATrip.Site" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <title>DANA Trip</title>
+    <link href="~/Styles/Site.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+    <form runat="server">
+        <header class="site-header">
+            <div class="container header-inner">
+                <a href="Home.aspx" class="brand">DANA Trip</a>
+                <nav class="main-nav">
+                    <a href="Place.aspx">Điểm du lịch</a>
+                    <a href="Food.aspx">Ẩm thực</a>
+                    <a href="Tour.aspx">Tour</a>
+                    <a href="Contract.aspx">Liên Hệ</a>
+                    <a href="DanhGia.aspx">Đánh Giá</a>
+                    <a href="ChatAI.aspx">ChatAI</a>
+                </nav>
+                <div class="header-actions">
+                    <asp:LinkButton ID="lnkDatVe" runat="server" CssClass="btn btn-primary">Đặt Vé</asp:LinkButton>
+
+                    <!-- Khi chưa đăng nhập -->
+                    <div class="user-dropdown" id="userMenu" runat="server">
+                        <button type="button" class="btn btn-user" onclick="toggleGuestDrop();">
+                            <span class="user-icon">👤</span>
+                        </button>
+                        <div id="dropdownGuest" class="dropdown-menu" style="display:none;">
+                            <a href="Register.aspx">Đăng ký</a>
+                            <a href="SignIn.aspx">Đăng nhập</a>
+                        </div>
+                    </div>
+
+                    <!-- Khi đã đăng nhập -->
+                    <div class="user-logged" id="userLogged" runat="server" visible="false">
+                        <span id="lblUserName" runat="server" class="username"></span>
+                        <button type="button" class="btn btn-user" onclick="toggleUserLogDrop();">
+                            <span class="user-icon">👤</span>
+                        </button>
+                        <div id="dropdownUser" class="dropdown-menu" style="display:none;">
+                            <!-- Links for normal User (will be shown by server) -->
+                            <asp:Panel ID="pnlUserLinks" runat="server" Visible="false">
+                                <a href="UserProfile.aspx">Thông tin cá nhân</a>
+                            </asp:Panel>
+                            <!-- Links for Admin (will be shown by server) -->
+                            <asp:Panel ID="pnlAdminLinks" runat="server" Visible="false">
+                                <a href="AdminDashboard.aspx">Quản lý</a>
+                            </asp:Panel>
+                            <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click">Đăng xuất</asp:LinkButton>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <asp:ScriptManager ID="ScriptManager1" runat="server" />
+        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+        <footer class="site-footer">
+            <div class="container footer-inner">
+                <div>
+                    <h4>DANA Trip</h4>
+                    <p>Cổng thông tin du lịch chính thức của thành phố Đà Nẵng.</p>
+                </div>
+                <div>
+                    <h4>Khám Phá</h4>
+                    <a href="DiaDiem.aspx">Điểm đến</a><br />
+                    <a href="AmThuc.aspx">Ẩm thực</a><br />
+                    <a href="Tour.aspx">Tour</a>
+                </div>
+                <div>
+                    <h4>Hỗ Trợ</h4>
+                    <a href="LienHe.aspx">Liên hệ</a><br />
+                    <a href="#">Chính sách</a>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Toggle guest dropdown
+            function toggleGuestDrop() {
+                var el = document.getElementById('dropdownGuest');
+                if (!el) return;
+                el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+            }
+
+            // Toggle logged-in user dropdown
+            function toggleUserLogDrop() {
+                var el = document.getElementById('dropdownUser');
+                if (!el) return;
+                el.style.display = (el.style.display === 'block') ? 'none' : 'block';
+            }
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', function (e) {
+                var guestWrap = document.getElementById('userMenu');
+                var userWrap = document.getElementById('userLogged');
+
+                var dg = document.getElementById('dropdownGuest');
+                var du = document.getElementById('dropdownUser');
+
+                if (guestWrap && !guestWrap.contains(e.target) && dg) dg.style.display = 'none';
+                if (userWrap && !userWrap.contains(e.target) && du) du.style.display = 'none';
+            });
+        </script>
+    </form>
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿.booking-container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 20px;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+.booking-title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.booking-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 30px;
+}
+
+.section-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 25px 0 10px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.tour-card {
+    display: flex;
+    gap: 15px;
+    padding: 18px;
+    border-radius: 14px;
+    background: #f4fbff;
+    border: 1px solid #e2f4ff;
+}
+
+.tour-img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.price {
+    color: #0093c8;
+    font-weight: bold;
+}
+
+.total-price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #0093c8;
+    margin-bottom: 20px;
+}
+
+.btn-book {
+    width: 100%;
+    padding: 15px;
+    background: #00b4e6;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+    .btn-book:hover {
+        background: #009cc7;
+    }

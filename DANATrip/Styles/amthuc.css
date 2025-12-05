@@ -1,0 +1,203 @@
+﻿/* Restore original card sizing: 3 columns on desktop, larger images like trước */
+
+/* Global reset / font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+/* HERO */
+.place-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+    .place-hero h1 {
+        padding-bottom: 5px;
+        color: #000;
+    }
+
+/* SEARCH */
+.search-wrapper {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.search-input {
+    width: 500px;
+    padding: 10px 15px;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    color: #000;
+}
+
+.btn-search {
+    padding: 12px 20px;
+    border: none;
+    background: #00c2ff;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+    .btn-search:hover {
+        background: #04aee5;
+    }
+
+/* FILTER */
+.filter-bar {
+    margin: 25px auto;
+    max-width: 1200px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.filter-item {
+    padding: 8px 18px;
+    font-size: 14px;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.2s;
+    color: #000;
+}
+
+    .filter-item.active,
+    .filter-item:hover {
+        background-color: #007bff;
+        color: white;
+        border-color: #007bff;
+    }
+
+/* ============================
+   MAIN: restore original grid/card size
+   - Desktop: 3 columns
+   - Tablet: 2 columns
+   - Mobile: 1 column
+============================ */
+
+/* Place grid centered and spaced similar to original */
+.place-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 columns like ban đầu */
+    gap: 26px;
+    margin: 18px 0 40px;
+    padding: 0 10px;
+}
+
+/* Card styling */
+.place-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 28px rgba(8,18,32,0.04);
+    transition: transform .18s ease, box-shadow .18s ease;
+    text-decoration: none;
+    color: inherit;
+    min-height: 280px; /* ensure consistent card height like hình */
+}
+
+    .place-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 42px rgba(8,18,32,0.08);
+    }
+
+/* Larger image area like ảnh gốc */
+.place-img {
+    width: 100%;
+    height: 180px; /* image cao hơn để giống ban đầu */
+    background-size: cover;
+    background-position: center;
+    background-color: #e6e6e6;
+}
+
+/* Info area */
+.place-info {
+    padding: 16px;
+    color: #000;
+}
+
+    .place-info h3 {
+        margin: 0 0 8px;
+        font-size: 20px;
+        color: #000;
+        font-weight: 700;
+    }
+
+.muted {
+    color: #444;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+    /* Clamp description */
+    .muted.small {
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+/* Ensure links keep black color */
+.place-card,
+.place-card a,
+.place-info a {
+    color: #000 !important;
+    text-decoration: none !important;
+}
+
+/* Responsive: tablet -> 2 columns */
+@media (max-width: 992px) {
+    .place-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .place-img {
+        height: 170px;
+    }
+}
+
+/* Mobile -> 1 column */
+@media (max-width: 600px) {
+    .place-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .place-img {
+        height: 160px;
+    }
+
+    .search-input {
+        width: 100%;
+        max-width: 420px;
+    }
+}

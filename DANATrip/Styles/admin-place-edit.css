@@ -1,0 +1,318 @@
+﻿/* Admin Place Edit Page – minimal & modern */
+
+:root {
+    --admin-bg: #f5f7fb;
+    --admin-card-bg: #ffffff;
+    --admin-border: #e2e8f0;
+    --admin-text-main: #0b1f33;
+    --admin-text-muted: #6b7280;
+    --admin-primary: #00c3ff;
+    --admin-primary-dark: #009ed1;
+    --admin-danger: #ef4444;
+    --admin-radius-lg: 16px;
+    --admin-radius-md: 10px;
+    --admin-shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* PAGE WRAPPER */
+
+.admin-page {
+    padding: 24px 0 40px;
+}
+
+/* TITLE + MESSAGE */
+
+.page-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--admin-text-main);
+}
+
+.msg {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: var(--admin-text-muted);
+}
+
+.msg.error {
+    color: #dc2626;
+}
+
+.msg.success {
+    color: #16a34a;
+}
+
+/* FORM GRID – THÔNG TIN CHUNG */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 24px;
+    margin-bottom: 24px;
+    background: var(--admin-card-bg);
+    padding: 18px 20px;
+    border-radius: var(--admin-radius-lg);
+    box-shadow: var(--admin-shadow-soft);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 13px;
+    color: var(--admin-text-muted);
+}
+
+/* INPUTS */
+
+.input {
+    padding: 8px 11px;
+    border-radius: 10px;
+    border: 1px solid var(--admin-border);
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+    background-color: #f9fafb;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--admin-primary);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 1px rgba(0, 195, 255, 0.25);
+}
+
+/* MAIN IMAGE PREVIEW */
+
+.place-main-img {
+    width: 100%;
+    max-width: 260px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 6px;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+/* BUTTONS */
+
+.btn {
+    padding: 7px 16px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    background: #e5f3f7;
+    color: var(--admin-text-main);
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-right: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.08s ease;
+}
+
+.btn:hover {
+    background: #d5ebf3;
+}
+
+.btn-primary {
+    background: var(--admin-primary);
+    color: #ffffff;
+    box-shadow: 0 10px 24px rgba(0, 195, 255, 0.32);
+}
+
+.btn-primary:hover {
+    background: var(--admin-primary-dark);
+}
+
+.btn-small {
+    padding: 4px 10px;
+    font-size: 12px;
+}
+
+.btn-danger {
+    background: rgba(239, 68, 68, 0.08);
+    color: var(--admin-danger);
+    border-color: transparent;
+}
+
+.btn-danger:hover {
+    background: var(--admin-danger);
+    color: #ffffff;
+}
+
+/* SECTION TITLES */
+
+.section-subtitle {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 18px 0 10px;
+    color: var(--admin-text-main);
+}
+
+/* PANEL BOXES (Album, Tham quan, Info, 360) */
+
+.panel-box {
+    background: var(--admin-card-bg);
+    border-radius: var(--admin-radius-lg);
+    box-shadow: var(--admin-shadow-soft);
+    padding: 16px 18px 14px;
+    margin-bottom: 22px;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+/* ALBUM GRID */
+
+.album-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.album-item {
+    width: 180px;
+    background: #f9fafb;
+    border-radius: var(--admin-radius-md);
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border: 1px solid var(--admin-border);
+}
+
+.album-thumb {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+/* URL input nhỏ hơn trong album / 360 */
+
+.input-url {
+    font-size: 12px;
+}
+
+/* Thêm ảnh / thêm bản ghi */
+
+.album-add {
+    margin-top: 12px;
+    border-top: 1px dashed #e5e7eb;
+    padding-top: 10px;
+    font-size: 13px;
+    color: var(--admin-text-muted);
+}
+
+/* INFO GRID (Tham quan / Thông tin / 360) */
+
+.info-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info-row {
+    display: grid;
+    grid-template-columns: 110px 190px 1.5fr 190px 120px;
+    gap: 8px;
+    align-items: flex-start;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(243, 244, 246, 0.9);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-header {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--admin-text-muted);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.info-col {
+    font-size: 13px;
+}
+
+.info-col.code {
+    max-width: 110px;
+}
+
+.info-col.title {
+    max-width: 220px;
+}
+
+.info-col.img {
+    max-width: 200px;
+}
+
+.info-col.act {
+    text-align: right;
+}
+
+/* Ô input nhỏ cho mã */
+
+.input-small {
+    max-width: 90px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+        grid-column: 1 / 2;
+    }
+
+    .info-row {
+        grid-template-columns: 90px 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas:
+            "code act"
+            "title title"
+            "desc desc"
+            "img img";
+    }
+
+    .info-col.code { grid-area: code; }
+    .info-col.act { grid-area: act; text-align: right; }
+    .info-col.title { grid-area: title; }
+    .info-col.desc { grid-area: desc; }
+    .info-col.img { grid-area: img; }
+}
+
+@media (max-width: 640px) {
+    .admin-page {
+        padding: 20px 0 32px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
+
+    .panel-box {
+        padding: 14px 12px;
+    }
+
+    .album-item {
+        width: 48%;
+    }
+}

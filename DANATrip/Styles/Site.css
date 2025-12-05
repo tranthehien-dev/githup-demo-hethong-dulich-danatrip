@@ -1,0 +1,361 @@
+﻿:root {
+    --bg: #f5f8f8;
+    --muted: #6f6f6f;
+    --accent: #14c6d9;
+    --card: #fff;
+    --radius: 12px;
+    --shadow: 0 4px 14px rgba(0,0,0,.08);
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI",Roboto,Arial;
+    background: var(--bg);
+    color: #222;
+    line-height: 1.5
+}
+
+.container {
+    max-width: 1120px;
+    margin: auto;
+    padding: 0 20px
+}
+/* HEADER */
+.site-header {
+    background: #fff;
+    border-bottom: 1px solid #e9e9e9;
+    position: sticky;
+    top: 0;
+    z-index: 50
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 20px;
+    color: #111;
+    text-decoration: none;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 12px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    transition: .15s
+}
+
+    .main-nav a:hover {
+        background: #f0f0f0;
+        color: #000
+    }
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: var(--radius);
+    border: none;
+    cursor: pointer;
+    transition: .15s
+}
+
+.btn-primary {
+    background: linear-gradient(180deg, #007bff, #0063d1);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(3, 102, 214, 0.16);
+    text-decoration: none
+}
+
+    .btn-primary:hover {
+        filter: brightness(.92)
+    }
+
+.btn-cta {
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none
+}
+
+    .btn-cta:hover {
+        filter: brightness(.92)
+    }
+
+.btn-user {
+    border: 1px solid #ddd;
+    background: #fff;
+    padding: 6px 12px;
+    border-radius: var(--radius);
+    transition: .15s
+}
+
+    .btn-user:hover {
+        background: #f7f7f7
+    }
+
+.user-dropdown {
+    position: relative
+}
+
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 42px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    padding: 6px;
+    min-width: 150px;
+    box-shadow: var(--shadow);
+    display: none
+}
+
+    .dropdown-menu a {
+        display: block;
+        padding: 8px 12px;
+        color: #333;
+        text-decoration: none;
+        border-radius: 6px
+    }
+
+
+/* SLIDERS */
+.section-slider {
+    padding: 40px 0
+}
+
+    .section-slider h3 {
+        text-align: center;
+        margin-bottom: 18px;
+        font-size: 22px;
+        font-weight: 600
+    }
+
+    .section-slider .section-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-bottom: 16px
+    }
+
+.see-more {
+    position: absolute;
+    right: 0;
+    font-size: .95rem;
+    color: #0ea5e9;
+    text-decoration: none;
+    padding: 4px 6px;
+    border-radius: 6px
+}
+
+    .see-more:hover {
+        text-decoration: underline;
+        color: #0284c7
+    }
+
+.slider-wrapper {
+    display: flex;
+    justify-content: center
+}
+
+.slider {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 6px
+}
+
+    .slider::-webkit-scrollbar {
+        height: 6px
+    }
+
+.card, a.card {
+    background: var(--card);
+    min-width: 260px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    transition: .2s
+}
+
+    .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(0,0,0,.13)
+    }
+
+.card-img {
+    height: 160px;
+    background-size: cover;
+    background-position: center
+}
+
+.card-body {
+    padding: 14px
+}
+
+.muted {
+    color: var(--muted)
+}
+
+    .muted.small {
+        color: var(--muted);
+        font-size: 13px;
+        /* Thêm phần rút gọn nội dung */
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* số dòng muốn hiển thị */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+/* REVIEW */
+.review-card {
+    min-width: 320px;
+    background: #fff;
+    border-radius: var(--radius);
+    padding: 16px;
+    display: flex;
+    gap: 14px;
+    box-shadow: var(--shadow)
+}
+
+.avatar img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover
+}
+/* PLACE LIST */
+.place-card {
+    display: flex;
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: 18px;
+    transition: .2s
+}
+
+    .place-card:hover {
+        transform: translateY(-3px)
+    }
+/* FOOTER */
+.site-footer {
+    background: #fff;
+    border-top: 1px solid #e6e6e6;
+    padding: 36px 0;
+    margin-top: 40px
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px
+}
+
+    .footer-inner h4 {
+        margin-bottom: 10px;
+        font-size: 16px
+    }
+
+    .footer-inner a {
+        text-decoration: none;
+        color: #444;
+        display: block;
+        margin-bottom: 6px
+    }
+
+        .footer-inner a:hover {
+            color: #000
+        }
+
+@media(max-width:900px) {
+    .footer-inner {
+        flex-direction: column
+    }
+
+    .slider {
+        gap: 12px
+    }
+
+    .card {
+        min-width: 220px
+    }
+}
+
+@media(max-width:600px) {
+    .hero h1 {
+        font-size: 30px
+    }
+
+    .place-img {
+        height: 140px
+    }
+}
+/* Tên user */
+.username {
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+/* Dropdown đồng nhất */
+.user-logged, .user-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 42px;
+    right: 0;
+    background: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 8px;
+    padding: 10px 0;
+    min-width: 160px;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.08);
+    display: none;
+}
+
+    .dropdown-menu a,
+    .dropdown-menu button,
+    .dropdown-menu .aspNetDisabled {
+        padding: 10px 16px;
+        display: block;
+        text-align: left;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: #333;
+    }
+
+/* Avatar button */
+.btn-user {
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    padding: 6px 10px;
+    background: #fff;
+    cursor: pointer;
+}

@@ -1,0 +1,10 @@
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.log
+
+# Packages restore được thì cũng có thể bỏ qua
+packages/

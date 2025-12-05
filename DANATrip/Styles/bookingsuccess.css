@@ -1,0 +1,262 @@
+﻿/* Cập nhật styles cho Booking Success - theo mockup */
+:root {
+    --bg: #f6fbfb;
+    --card-bg: #ffffff;
+    --muted: #7b9aa0;
+    --accent: #00b4e6;
+    --accent-dark: #0b79ad;
+    --success-green: #e8f8f3;
+    --primary-blue: #007bff;
+    --soft-border: rgba(7, 52, 60, 0.06);
+    --radius-lg: 16px;
+    --radius-md: 12px;
+    --container-max: 1200px;
+    --text: #0b2023;
+    --subtext: #4b6b6e;
+}
+
+body {
+    background: var(--bg);
+    font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--text);
+}
+
+/* Page wrapper and grid layout */
+.success-container {
+    max-width: var(--container-max);
+    margin: 48px auto;
+    padding: 36px;
+    box-sizing: border-box;
+}
+
+/* Two-column layout: left content + right hero image */
+.success-layout {
+    display: grid;
+    grid-template-columns: 1fr 480px;
+    gap: 40px;
+    align-items: start;
+}
+
+/* Left column */
+.success-left {
+    padding-right: 8px;
+}
+
+/* Header */
+.success-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 18px;
+}
+
+    .success-header .check-badge {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 30% 30%, #e6fbf6, #f0fdfc);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(3, 50, 50, 0.03);
+        flex-shrink: 0;
+    }
+
+    .success-header h1 {
+        margin: 0;
+        font-size: 34px;
+        letter-spacing: -0.2px;
+        color: var(--text);
+        font-weight: 700;
+    }
+
+    .success-header p.lead {
+        margin: 10px 0 0 84px; /* aligns under the heading visually */
+        color: var(--subtext);
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+/* Card with booking details */
+.booking-card {
+    margin-top: 18px;
+    background: var(--card-bg);
+    border-radius: var(--radius-md);
+    box-shadow: 0 6px 24px rgba(7, 52, 60, 0.04);
+    border: 1px solid var(--soft-border);
+    padding: 20px;
+    overflow: hidden;
+}
+
+    /* Top row: booking code and copy */
+    .booking-card .top-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 14px;
+    }
+
+.booking-code {
+    font-weight: 700;
+    color: #0066cc;
+    font-size: 18px;
+    letter-spacing: 0.6px;
+}
+
+.copy-btn {
+    background: linear-gradient(180deg, #f5fbff, #eaf8ff);
+    border: 1px solid rgba(3, 102, 214, 0.06);
+    color: var(--accent-dark);
+    padding: 8px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(3, 102, 214, 0.04);
+}
+
+/* Details grid inside card */
+.details-list {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    row-gap: 12px;
+    column-gap: 18px;
+    align-items: center;
+    color: var(--subtext);
+    font-size: 15px;
+}
+
+    .details-list .label {
+        color: #7ea6a9;
+        font-weight: 600;
+    }
+
+    .details-list .value {
+        color: var(--text);
+        font-weight: 600;
+    }
+
+/* total row style */
+.total-row .value {
+    font-weight: 800;
+    color: #102a2a;
+    font-size: 16px;
+}
+
+/* Steps section */
+.next-steps {
+    margin-top: 28px;
+}
+
+    .next-steps h3 {
+        margin: 0 0 14px 0;
+        font-size: 18px;
+        color: var(--text);
+    }
+
+.step {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: linear-gradient(180deg, rgba(237,250,249,0.6), rgba(255,255,255,0.6));
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(3, 50, 50, 0.03);
+}
+
+    .step .icon {
+        min-width: 52px;
+        min-height: 52px;
+        border-radius: 10px;
+        background: #e6fbf6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #00b48a;
+        font-weight: 700;
+        box-shadow: 0 2px 6px rgba(3,50,50,0.02);
+        font-size: 12px;
+    }
+
+    .step .text {
+        color: var(--subtext);
+    }
+
+        .step .text .title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+
+/* Buttons area */
+.action-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 14px;
+}
+
+.btn-secondary {
+    background: linear-gradient(180deg, #eaf6ff, #ffffff);
+    color: #0077cc;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(3, 102, 214, 0.06);
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Right hero image */
+.success-right {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(3,50,50,0.08);
+    object-fit: cover;
+    border: 1px solid rgba(7,52,60,0.03);
+    max-height: 640px;
+}
+
+/* Small screens responsive */
+@media (max-width: 980px) {
+    .success-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .success-header p.lead {
+        margin-left: 0;
+    }
+
+    .success-right {
+        order: -1;
+        margin-bottom: 18px;
+    }
+
+    .hero-image {
+        max-height: 320px;
+    }
+
+    .details-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Utility tweaks for ASP.NET controls look & feel */
+.btn-save, .btn-contact {
+    display: inline-flex !important;
+    background: linear-gradient(180deg, #eaf6ff, #ffffff);
+    color: #0077cc;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(3, 102, 214, 0.06);
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+}

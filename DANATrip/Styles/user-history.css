@@ -1,0 +1,159 @@
+﻿/* Basic styling for user's bookings page (updated to force-show cancel button) */
+.container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page-header h1 {
+    margin: 6px 0 6px;
+    font-size: 26px;
+    color: #0b2a2b;
+}
+
+.page-header .subtitle {
+    color: #6f8b8b;
+    margin-bottom: 12px;
+}
+
+.bookings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.booking-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 14px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 22px rgba(6,20,25,0.04);
+    border: 1px solid #eef6f6;
+}
+
+.booking-left {
+    max-width: 65%;
+}
+
+.order-id {
+    font-weight: 700;
+    color: #0b2a2b;
+    margin-bottom: 6px;
+}
+
+.tour-name {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.meta {
+    color: #7b9a9a;
+    font-size: 13px;
+}
+
+.booking-right {
+    text-align: right;
+    min-width: 220px; /* tăng để đủ chỗ cho nút */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    box-sizing: border-box;
+}
+
+.price {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.date {
+    color: #7b9a9a;
+    margin-bottom: 6px;
+}
+
+.status {
+    margin-bottom: 8px;
+    color: #0b2a2b;
+}
+
+/* Force-show cancel button to avoid CSS hiding issues */
+.btn-cancel {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: #ff6b6b !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 8px 12px !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    z-index: 999 !important;
+    margin-top: 8px;
+}
+
+    .btn-cancel:hover {
+        opacity: 0.95 !important;
+    }
+
+.msg {
+    display: block;
+    margin-top: 12px;
+}
+
+    .msg.error {
+        color: #d9534f;
+    }
+
+    .msg.success {
+        color: #28a745;
+    }
+
+.muted {
+    color: #7b9a9a;
+    margin-top: 12px;
+    display: block;
+}
+.btn-review {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: #17a2b8;
+    color: #fff;
+    font-size: 13px;
+}
+
+/* Optional: debug outline (uncomment while debugging)
+.booking-card { outline: 1px dashed rgba(0,0,0,0.04); }
+*/
+.pager {
+    margin-top: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+    .pager a {
+        color: #00bcd4;
+        text-decoration: none;
+        padding: 4px 10px;
+        border-radius: 6px;
+        border: 1px solid #00bcd4;
+    }
+
+        .pager a:hover {
+            background: #00bcd4;
+            color: #fff;
+        }
+
+    .pager span {
+        min-width: 80px;
+        text-align: center;
+    }

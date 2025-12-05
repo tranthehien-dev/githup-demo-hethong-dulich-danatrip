@@ -1,0 +1,237 @@
+﻿/* =======================================
+   RESET
+======================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body, html {
+    height: 100%;
+    background: #f8f9fb;
+}
+
+/* =======================================
+   LAYOUT CHUNG
+======================================= */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* LEFT SIDE (dùng chung cho mọi trang) */
+.left-side,
+.left {
+    width: 55%;
+    background: #ddd;
+    position: relative;
+}
+
+    /* Ảnh nền cho cả login & register */
+    .left-image,
+    .left::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../Images/bg-danang.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+/* Chữ trên ảnh (dùng cho trang đăng ký) */
+.left-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+    .left-content h1 {
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 1.4;
+    }
+
+    .left-content p {
+        font-size: 14px;
+        opacity: 0.9;
+        margin-top: 15px;
+    }
+
+/* RIGHT SIDE */
+.right-side,
+.right {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box,
+.form-box {
+    width: 75%;
+}
+
+/* =======================================
+   TITLES
+======================================= */
+.brand {
+    font-size: 20px;
+    color: #333;
+}
+
+.title,
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* =======================================
+   INPUT GROUPS
+======================================= */
+label {
+    font-size: 14px;
+    color: #555;
+}
+
+.input-field,
+.input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+}
+
+.textbox {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+/* Icon trong login */
+.icon {
+    margin-right: 8px;
+    font-size: 15px;
+}
+
+/* Password toggle container */
+.password-box {
+    position: relative;
+}
+
+/* Icon con mắt (nếu cần dùng lại) */
+.eye-icon {
+    position: absolute;
+    right: 12px;
+    top: 16px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+/* =======================================
+   BUTTONS
+======================================= */
+.btn-login,
+.btn-register {
+    width: 100%;
+    padding: 12px;
+    background: #00d2f8;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+    .btn-login:hover,
+    .btn-register:hover {
+        background: #00c2e6;
+    }
+
+/* Forgot password */
+.forgot {
+    display: block;
+    text-align: right;
+    margin-top: -8px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    color: #0abde3;
+    text-decoration: none;
+}
+
+/* =======================================
+   DIVIDERS
+======================================= */
+.divider {
+    height: 1px;
+    background: #ddd;
+    margin: 25px 0 10px;
+}
+
+.or {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* =======================================
+   SOCIAL BUTTONS
+======================================= */
+.social-buttons,
+.social-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social,
+.social-btn {
+    width: 48%;
+    padding: 10px;
+    background: #f1f1f1;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.facebook {
+    background: #e7f0ff;
+}
+
+/* =======================================
+   LINKS
+======================================= */
+.register,
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
+
+    .register a,
+    .login-link a {
+        color: #0abde3;
+        text-decoration: none;
+    }

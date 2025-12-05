@@ -1,0 +1,226 @@
+﻿.tour-container {
+    max-width: 1180px;
+    margin: auto;
+    padding: 40px 20px;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* Title */
+.page-title {
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Search */
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    gap: 10px;
+}
+
+.search-input {
+    width: 500px;
+    padding: 12px 15px;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+.btn-search {
+    padding: 12px 20px;
+    border: none;
+    background: #00c2ff;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+    .btn-search:hover {
+        background: #04aee5;
+    }
+
+/* Tour List */
+.tour-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.tour-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+    .tour-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+/* Image */
+.tour-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Content */
+.tour-content {
+    padding: 18px;
+}
+
+.tour-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* Tags */
+.tour-tags {
+    color: #00a2e8;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+/* Price */
+.tour-price {
+    font-size: 20px;
+    color: #0091c8;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+/* Detail button */
+.btn-detail {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    background: #c8f5ff;
+    color: #008bb8;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+    .btn-detail:hover {
+        background: #b6effa;
+    }
+/* Cập nhật: căn chỉnh chi tiết và giá tiền để đồng bộ giữa các card */
+
+/* Card cơ bản: Flex dọc để đẩy phần đáy xuống */
+.tour-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+/* Ảnh giữ cố định */
+.tour-image {
+    flex: 0 0 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Nội dung card (title, tags, price, button) */
+.tour-content {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1 1 auto; /* chiếm phần còn lại của card */
+    box-sizing: border-box;
+}
+
+/* Tiêu đề và tags */
+.tour-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    color: #0b2023;
+}
+
+.tour-tags {
+    color: #00a2e8;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Một phần spacer / mô tả nếu có */
+.tour-desc {
+    color: #556d6f;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Phần đáy chứa giá và nút - luôn ở đáy vì margin-top:auto */
+.bottom-row {
+    margin-top: auto; /* đẩy toàn bộ bottom-row xuống đáy .tour-content */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Giá tiền */
+.tour-price {
+    font-size: 20px;
+    color: #0091c8;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Nút Xem chi tiết */
+.btn-detail {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    background: #c8f5ff;
+    color: #008bb8;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+    align-self: stretch;
+}
+
+/* Hover hiệu ứng */
+.tour-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    .tour-list {
+        grid-template-columns: 1fr;
+    }
+
+    .tour-image {
+        flex: 0 0 160px;
+        height: 160px;
+    }
+}

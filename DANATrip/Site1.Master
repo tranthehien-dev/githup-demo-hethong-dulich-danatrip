@@ -1,0 +1,74 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="DANATrip.Site1" %>
+<!DOCTYPE html>
+<html lang="vi">
+<head runat="server">
+    <meta charset="utf-8" />
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server">DANA Trip</asp:ContentPlaceHolder></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="<%= ResolveUrl("~/Styles/site1.css") %>" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="topbar">
+            <div class="topbar-inner container">
+                <a class="brand" href="<%= ResolveUrl("~/Home.aspx") %>">DANA Trip</a>
+                <div class="top-actions">
+                    <asp:LinkButton ID="lnkHome" runat="server" PostBackUrl="~/Home.aspx" CssClass="link">Trang chủ</asp:LinkButton>
+                    <asp:LinkButton ID="lnkLogoutTop" runat="server" OnClick="lnkLogoutTop_Click" CssClass="link" Visible="false">Đăng xuất</asp:LinkButton>
+                </div>
+            </div>
+        </header>
+
+        <div class="app-layout">
+            <aside class="sidebar">
+                <div class="sidebar-inner">
+                    <div id="pnlUserSummary" runat="server" visible="false" class="sidebar-user">
+                        <asp:Image ID="imgAvatar" runat="server" CssClass="avatar" />
+                        <div class="user-info">
+                            <asp:Label ID="lblSidebarName" runat="server" CssClass="name">Người dùng</asp:Label>
+                            <asp:Label ID="lblSidebarEmail" runat="server" CssClass="email">email@example.com</asp:Label>
+                        </div>
+                    </div>
+
+                    <asp:Panel ID="pnlUserSidebar" runat="server" Visible="false" CssClass="user-sidebar">
+                        <ul class="menu">
+                            <li id="liProfile" runat="server"><a href="<%= ResolveUrl("~/UserProfile.aspx") %>">Thông tin cá nhân</a></li>
+                            <li id="liHistory" runat="server"><a href="<%= ResolveUrl("~/UserHistory.aspx") %>">Lịch sử đặt tour</a></li>
+                            <li id="liSettings" runat="server"><a href="<%= ResolveUrl("~/UserSettings.aspx") %>">Cài đặt tài khoản</a></li>
+                        </ul>
+                    </asp:Panel>
+
+                    <asp:Panel ID="pnlAdminSidebar" runat="server" Visible="false" CssClass="admin-sidebar">
+                        <ul class="menu">
+                            <li id="liAdminDashboard" runat="server"><a href="<%= ResolveUrl("~/AdminDashboard.aspx") %>">Dashboard</a></li>
+                            <li id="liAdminPlaces" runat="server"><a href="<%= ResolveUrl("~/AdminPlace.aspx") %>">Địa điểm</a></li>
+                            <li id="liAdminFoods" runat="server"><a href="<%= ResolveUrl("~/AdminFood.aspx") %>">Ẩm Thực</a></li>
+                            <li id="liAdminTours" runat="server"><a href="<%= ResolveUrl("~/AdminTour.aspx") %>">Tour</a></li>
+                            <li id="liAdminBooking" runat="server"><a href="<%= ResolveUrl("~/AdminBooking.aspx") %>">Vé & Thanh Toán</a></li>
+                            <li id="liAdminUsers" runat="server"><a href="<%= ResolveUrl("~/AdminUser.aspx") %>">Người dùng</a></li>
+                            <li id="liAdminContact" runat="server"><a href="<%= ResolveUrl("~/AdminContact.aspx") %>">Liên Hệ</a></li>
+                            <li id="liAdminDanhGia" runat="server"><a href="<%= ResolveUrl("~/AdminDanhGia.aspx") %>">Đánh Giá</a></li>
+                        </ul>
+                    </asp:Panel>
+
+                    <asp:Panel ID="pnlGuest" runat="server" Visible="false" CssClass="guest-sidebar">
+                        <div class="guest-msg">Chưa đăng nhập. <a href="<%= ResolveUrl("~/SignIn.aspx") %>">Đăng nhập</a> / <a href="<%= ResolveUrl("~/Register.aspx") %>">Đăng ký</a></div>
+                    </asp:Panel>
+
+                </div>
+            </aside>
+
+            <main class="main-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+            </main>
+        </div>
+
+        <footer class="site-footer">
+            <div class="container">
+                © <%= DateTime.Now.Year %> DANA Trip. All rights reserved.
+            </div>
+        </footer>
+    </form>
+</body>
+</html>

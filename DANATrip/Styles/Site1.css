@@ -1,0 +1,301 @@
+﻿:root {
+    --bg: #f3f7fb;
+    --bg-soft: #eef5ff;
+    --white: #ffffff;
+    --muted: #6b7280;
+    --text-main: #0f172a;
+    --accent: #0ea5e9;
+    --accent-soft: rgba(14, 165, 233, 0.12);
+    --accent-dark: #0284c7;
+    --border: #e2e8f0;
+    --sidebar-w: 250px;
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.08);
+    --shadow-subtle: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    background: radial-gradient(circle at top left, #e0f2fe, #f3f7fb 45%, #f9fafb);
+    color: var(--text-main);
+}
+
+/* CONTAINER */
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* TOPBAR */
+
+.topbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+}
+
+.topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    padding: 0 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+    .brand::before {
+        content: "";
+        width: 30px;
+        height: 30px;
+        border-radius: 999px;
+        background: radial-gradient(circle at 30% 20%, #38bdf8, #0ea5e9 45%, #0369a1);
+        box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.25);
+    }
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+    .top-actions .link {
+        border: none;
+        background: transparent;
+        cursor: pointer;
+        font-size: 14px;
+        color: var(--muted);
+        padding: 6px 10px;
+        border-radius: 999px;
+        text-decoration: none;
+    }
+
+        .top-actions .link:hover {
+            background: rgba(148, 163, 184, 0.08);
+            color: var(--accent-dark);
+        }
+
+/* LAYOUT */
+
+.app-layout {
+    max-width: 1200px;
+    margin: 22px auto 32px;
+    padding: 0 18px;
+    display: grid;
+    grid-template-columns: var(--sidebar-w) minmax(0, 1fr);
+    gap: 24px;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    align-self: flex-start;
+}
+
+.sidebar-inner {
+    background: linear-gradient(180deg, #f9fbff, #eef5ff);
+    border-radius: var(--radius-lg);
+    padding: 12px 10px 16px;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow: var(--shadow-soft);
+    position: sticky;
+    top: 86px;
+}
+
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    padding: 10px 8px 14px;
+    margin-bottom: 8px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 2px solid rgba(56, 189, 248, 0.35);
+}
+
+.user-info .name {
+    display: block;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.user-info .email {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.user-sidebar,
+.admin-sidebar,
+.guest-sidebar {
+    margin-top: 4px;
+}
+
+/* MENU */
+
+.menu {
+    list-style: none;
+    padding: 6px 4px 4px;
+    margin: 0;
+}
+
+    .menu li {
+        margin: 4px 0;
+    }
+
+        .menu li a {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 9px 11px;
+            border-radius: 999px;
+            font-size: 14px;
+            color: #0f172a;
+            text-decoration: none;
+            transition: background 0.15s ease, color 0.15s ease, transform 0.08s ease;
+        }
+
+            .menu li a::after {
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-radius: 999px;
+                background: transparent;
+            }
+
+        .menu li:hover a {
+            background: rgba(148, 163, 184, 0.12);
+            color: var(--accent-dark);
+            transform: translateX(2px);
+        }
+
+        .menu li.active a {
+            background: linear-gradient(90deg, rgba(14,165,233,0.12), rgba(59,130,246,0.10));
+            color: var(--accent-dark);
+            font-weight: 600;
+            box-shadow: 0 10px 26px rgba(15, 23, 42, 0.12);
+            transform: translateX(2px);
+        }
+
+            .menu li.active a::after {
+                background: #0ea5e9;
+            }
+/* Guest sidebar */
+
+.guest-sidebar {
+    margin-top: 10px;
+    padding: 8px 10px;
+    border-radius: 14px;
+    background: rgba(248, 250, 252, 0.85);
+    border: 1px dashed rgba(148, 163, 184, 0.7);
+    font-size: 13px;
+    color: var(--muted);
+}
+
+    .guest-sidebar a {
+        color: var(--accent-dark);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+/* MAIN CONTENT */
+
+.main-content {
+    min-height: 60vh;
+    padding: 4px 6px 32px;
+}
+
+    /* Bọc nội dung admin cho cảm giác card */
+
+    .main-content > .container,
+    .main-content > div:not(.db-page) {
+        /* nếu bạn dùng .container riêng trong các trang, có thể bỏ đoạn này */
+    }
+
+/* FOOTER */
+
+.site-footer {
+    padding: 18px 20px 26px;
+    text-align: center;
+    color: var(--muted);
+    border-top: 1px solid rgba(226, 232, 240, 0.7);
+    font-size: 13px;
+    background: rgba(248, 250, 252, 0.9);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+    .app-layout {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        padding: 0 16px;
+    }
+
+    .sidebar-inner {
+        position: static;
+        border-radius: 18px;
+        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+    }
+}
+
+@media (max-width: 768px) {
+    .topbar-inner {
+        padding: 0 16px;
+    }
+
+    .brand {
+        font-size: 18px;
+    }
+
+    .app-layout {
+        margin-top: 16px;
+    }
+
+    .sidebar-user {
+        padding: 8px;
+    }
+
+    .avatar {
+        width: 44px;
+        height: 44px;
+    }
+
+    .main-content {
+        padding-bottom: 24px;
+    }
+}

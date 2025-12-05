@@ -1,0 +1,312 @@
+﻿/* Admin Dashboard */
+
+:root {
+    --db-bg: #f5f7fb;
+    --db-card-bg: #ffffff;
+    --db-border: #e2e8f0;
+    --db-text-main: #0b1f33;
+    --db-text-muted: #6b7280;
+    --db-primary: #00c3ff;
+    --db-primary-dark: #009ed1;
+    --db-radius-lg: 18px;
+    --db-radius-md: 14px;
+    --db-shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+.db-page {
+    padding: 24px 0 40px;
+}
+
+.db-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--db-text-main);
+}
+
+.db-subtitle {
+    font-size: 13px;
+    color: var(--db-text-muted);
+    margin-bottom: 16px;
+}
+
+/* CARDS */
+
+.db-cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.db-card {
+    background: var(--db-card-bg);
+    border-radius: var(--db-radius-md);
+    padding: 14px 16px;
+    box-shadow: var(--db-shadow-soft);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.db-card-label {
+    font-size: 12px;
+    color: var(--db-text-muted);
+    margin-bottom: 6px;
+}
+
+.db-card-value {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--db-text-main);
+}
+
+.db-card-sub {
+    font-size: 12px;
+    color: var(--db-text-muted);
+    margin-top: 4px;
+}
+
+.db-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    background: #ecfeff;
+    color: #0369a1;
+}
+
+/* MIDDLE ROW */
+
+.db-middle {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.db-panel {
+    background: var(--db-card-bg);
+    border-radius: var(--db-radius-lg);
+    box-shadow: var(--db-shadow-soft);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    padding: 14px 16px;
+}
+
+.db-panel-header h2 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--db-text-main);
+    margin-bottom: 8px;
+}
+
+/* Chart placeholder */
+
+.db-chart-placeholder {
+    padding: 4px 0;
+}
+
+.db-chart-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    font-size: 12px;
+    color: var(--db-text-muted);
+}
+
+.db-chart-value {
+    font-weight: 500;
+    color: var(--db-text-main);
+}
+
+/* Circle panel */
+
+.db-circle-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 12px 0;
+}
+
+.db-circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 999px;
+    border: 8px dashed #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.db-circle-main {
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--db-text-main);
+}
+
+.db-circle-sub {
+    font-size: 12px;
+    color: var(--db-text-muted);
+}
+
+.db-legend {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--db-text-muted);
+}
+
+.db-legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.dot-blue {
+    background: #0ea5e9;
+}
+
+.dot-gray {
+    background: #9ca3af;
+}
+
+/* BOTTOM ROW */
+
+.db-bottom {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 14px;
+}
+
+/* Table recent bookings */
+
+.db-table {
+    margin-top: 6px;
+}
+
+.db-row {
+    display: grid;
+    grid-template-columns: 120px 1.6fr 1.2fr 150px 140px;
+    column-gap: 8px;
+    padding: 8px 2px;
+    align-items: center;
+    font-size: 12px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.db-row-header {
+    font-weight: 600;
+    color: var(--db-text-muted);
+    border-bottom-color: #e5e7eb;
+}
+
+.db-col-code {
+    font-weight: 600;
+    color: var(--db-text-main);
+}
+
+.db-col-status {
+    text-align: right;
+}
+
+/* Status badge */
+
+.db-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+    .db-status::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        margin-right: 5px;
+    }
+
+.db-status-success {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+    .db-status-success::before {
+        background: #22c55e;
+    }
+
+.db-status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+    .db-status-pending::before {
+        background: #fbbf24;
+    }
+
+.db-status-cancel {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+    .db-status-cancel::before {
+        background: #ef4444;
+    }
+
+.db-status-default {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+    .db-status-default::before {
+        background: #9ca3af;
+    }
+
+/* Top tours */
+
+.db-top-item {
+    margin-bottom: 10px;
+}
+
+.db-top-title {
+    font-size: 13px;
+    color: var(--db-text-main);
+    margin-bottom: 2px;
+}
+
+.db-top-bar {
+    width: 100%;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.db-top-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #0ea5e9, #22c55e);
+}
+
+.db-top-meta {
+    font-size: 11px;
+    color: var(--db-text-muted);
+    margin-top: 2px;
+}
+
+/* Responsive (cơ bản) */
+
+@media (max-width: 1024px) {
+    .db-cards {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+    }
+
+    .db-middle, .db-bottom {
+        grid-template-columns: 1fr;
+    }
+}

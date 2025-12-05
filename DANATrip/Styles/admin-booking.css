@@ -1,0 +1,309 @@
+﻿/* Admin Booking – Quản lý Vé và Thanh toán */
+
+:root {
+    --ab-bg: #f5f7fb;
+    --ab-card-bg: #ffffff;
+    --ab-border: #e2e8f0;
+    --ab-text-main: #0b1f33;
+    --ab-text-muted: #6b7280;
+    --ab-primary: #00c3ff;
+    --ab-primary-dark: #009ed1;
+    --ab-radius-lg: 18px;
+    --ab-radius-md: 10px;
+    --ab-shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.06);
+}
+
+/* PAGE */
+
+.ab-page {
+    padding: 24px 0 40px;
+}
+
+.ab-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--ab-text-main);
+}
+
+.ab-subtitle {
+    font-size: 13px;
+    color: var(--ab-text-muted);
+    margin-bottom: 16px;
+}
+
+/* FILTER BAR */
+
+.ab-filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.ab-search {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--ab-border);
+    background: #f9fafb;
+    font-size: 14px;
+}
+
+    .ab-search:focus {
+        outline: none;
+        background: #ffffff;
+        border-color: var(--ab-primary);
+        box-shadow: 0 0 0 1px rgba(0, 195, 255, 0.25);
+    }
+
+/* TABS */
+
+.ab-tabs {
+    display: inline-flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    background: #edf2ff;
+    padding: 4px;
+    border-radius: 999px;
+}
+
+.ab-tab {
+    border: none;
+    background: transparent;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    cursor: pointer;
+    color: #4b5563;
+}
+
+    .ab-tab:hover {
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    .ab-tab:focus {
+        outline: none;
+    }
+
+/* you can add a class for active tab in code-behind if muốn */
+
+.ab-btn {
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+}
+
+.ab-btn-filter {
+    background: var(--ab-primary);
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(0, 195, 255, 0.30);
+}
+
+/* MESSAGE */
+
+.ab-msg {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: var(--ab-text-muted);
+}
+
+    .ab-msg.success {
+        color: #16a34a;
+    }
+
+    .ab-msg.danger {
+        color: #dc2626;
+    }
+
+/* TABLE */
+
+.ab-table {
+    background: var(--ab-card-bg);
+    border-radius: var(--ab-radius-lg);
+    box-shadow: var(--ab-shadow-soft);
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.ab-row {
+    display: grid;
+    grid-template-columns: 140px 190px 1.4fr 150px 150px 150px 150px;
+    column-gap: 8px;
+    padding: 10px 16px;
+    align-items: center;
+    border-bottom: 1px solid rgba(243, 244, 246, 0.9);
+    font-size: 13px;
+}
+
+    .ab-row:last-child {
+        border-bottom: none;
+    }
+
+.ab-row-header {
+    background: #f8fafc;
+    font-weight: 600;
+    color: var(--ab-text-muted);
+    font-size: 13px;
+}
+
+.ab-col {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ab-col-name {
+    white-space: normal;
+}
+
+.ab-col-code {
+    font-weight: 600;
+    color: var(--ab-text-main);
+}
+
+.ab-col-money {
+    text-align: right;
+    font-weight: 600;
+}
+
+.ab-col-actions {
+    text-align: right;
+}
+
+.ab-subtext {
+    font-size: 11px;
+    color: var(--ab-text-muted);
+}
+
+/* STATUS BADGE */
+
+.ab-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+    .ab-status::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        margin-right: 6px;
+    }
+
+.ab-status-success {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+    .ab-status-success::before {
+        background: #22c55e;
+    }
+
+.ab-status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+    .ab-status-pending::before {
+        background: #fbbf24;
+    }
+
+.ab-status-cancel {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+    .ab-status-cancel::before {
+        background: #ef4444;
+    }
+
+.ab-status-default {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+    .ab-status-default::before {
+        background: #9ca3af;
+    }
+
+/* ACTION LINKS */
+
+.ab-link {
+    display: inline-block;
+    font-size: 11px;
+    color: var(--ab-primary-dark);
+    cursor: pointer;
+    margin-left: 6px;
+}
+
+    .ab-link:first-child {
+        margin-left: 0;
+    }
+
+    .ab-link:hover {
+        text-decoration: underline;
+    }
+
+.ab-link-danger {
+    color: #e11d48;
+}
+
+/* FOOTER */
+
+.ab-footer {
+    margin-top: 10px;
+    font-size: 12px;
+    color: var(--ab-text-muted);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1024px) {
+    .ab-row {
+        grid-template-columns: 110px 160px 1.4fr 130px 130px 120px 130px;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ab-row,
+    .ab-row-header {
+        display: none; /* ở màn nhỏ có thể ẩn bảng; nếu cần mobile layout riêng có thể thêm sau */
+    }
+}
+/* PAGER */
+
+.ab-pager {
+    margin-top: 12px;
+}
+
+.ab-page-link {
+    display: inline-block;
+    min-width: 28px;
+    padding: 4px 8px;
+    margin-right: 4px;
+    border-radius: 999px;
+    border: 1px solid #e5e7eb;
+    font-size: 12px;
+    color: #4b5563;
+    text-align: center;
+    text-decoration: none;
+}
+
+    .ab-page-link:hover {
+        background: #f3f4f6;
+    }
+
+.ab-page-link-active {
+    background: #0ea5e9;
+    border-color: #0ea5e9;
+    color: #ffffff;
+}
